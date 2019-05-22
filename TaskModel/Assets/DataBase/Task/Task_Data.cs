@@ -8,22 +8,15 @@ static class Task_Data{
     public static string[] Learn_Reward = new string[7] { "Crystal", "Crystal", "Crystal", "Crystal", "Crystal", "Crystal", "Crystal" };
     public static string[] Learn_Punishment = new string[7] { "Crystal", "Crystal", "Crystal", "Crystal", "Crystal", "crystal", "Crystal" };
 
-    public static void Learn_Get()
+    public static Task_Class[] Learn_Get()
     {
-        //宣告 Task_Class 陣列 Start
+        //宣告 Task_Class 陣列並加入資料 Start
         Task_Class[] task_temp = new Task_Class[7];
         for(int i = 0; i < 7; i++)
         {
-            task_temp[i] = new Task_Class();
+            task_temp[i] = new Task_Class(Learn_Threshold[i], Learn_Request[i], Learn_Reward[i], Learn_Punishment[i]);
         }
-        //宣告 Task_Class 陣列 End
-
-        //加入資料至 task_temp  Start
-        for (int i = 0; i < 7; i++)
-        {
-            task_temp[i] = new Task_Class();
-        }
-        //加入資料至 task_temp End
-
+        //宣告 Task_Class 陣列並加入資料 End
+        return task_temp;
     }
 }
