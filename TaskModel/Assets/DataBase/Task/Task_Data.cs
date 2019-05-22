@@ -26,6 +26,7 @@ static class Task_Data{
             learn_temp[i] = new Task_Class(Learn_Title[i], Learn_Threshold[i], Learn_Request[i], Learn_Reward[i], Learn_Punishment[i]);
         }
         //宣告 learn_temp 陣列並加入資料 End
+        Debug.Log(learn_temp[2].GetTitle());
     }
     public static Task_Class Learn_Get(int n)
     {
