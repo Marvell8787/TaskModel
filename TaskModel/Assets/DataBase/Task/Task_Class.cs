@@ -10,7 +10,7 @@ class Task_Class {
     private string Reward = "";
     private string Punishment = "";
     private int Status = 0;
-    public Task_Class(string _Title,string _Threshold, string _Request, string _Reward, string _Punishment)
+    public Task_Class(string _Title= "", string _Threshold = "", string _Request = "", string _Reward = "", string _Punishment = "")
     {
         Title = _Title;
         Threshold = _Threshold;

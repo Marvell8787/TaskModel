@@ -2,23 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+static class Check
+{
+    public static string s = "";
+}
 public class Function_Task : MonoBehaviour {
-    private Task_Class[] learn_temp = new Task_Class[7];
-    private Task_Class[] battle_temp = new Task_Class[3];
-    private bool learn_flag = false;
-    private bool battle_flag = false;
     void Start()
     {
         ClearAllText();
+
         Task_Data.Learn_Init();
         Task_Data.Battle_Init();
     }
     public void GetLearnData()
     {
-        learn_flag = true;
-        battle_flag = false;
+        Check.s = "learn";
         ClearAllText();
+        Task_Class[] learn_temp = new Task_Class[7];
         for (int i =0; i < 7; i++){
             learn_temp[i] = Task_Data.Learn_Get(i);
         }
@@ -48,14 +48,13 @@ public class Function_Task : MonoBehaviour {
                     break;
             }
         }
-
     }
 
     public void GetBattleData()
     {
-        learn_flag = false;
-        battle_flag = true;
+        Check.s = "battle";
         ClearAllText();
+        Task_Class[] battle_temp = new Task_Class[3];
         for (int i = 0; i <3 ; i++)
         {
             battle_temp[i] = Task_Data.Battle_Get(i);
@@ -100,24 +99,60 @@ public class Function_Task : MonoBehaviour {
             t_temp = GameObject.Find("Text_Task_" + (i+1).ToString() ).GetComponent<Text>();
             t_temp.text = "";
         }
+        t_temp = GameObject.Find("Text_ThresholdContent").GetComponent<Text>();
+        t_temp.text = "";
+        t_temp = GameObject.Find("Text_RequestContent").GetComponent<Text>();
+        t_temp.text = "";
+        t_temp = GameObject.Find("Text_RewardContent").GetComponent<Text>();
+        t_temp.text = "";
+        t_temp = GameObject.Find("Text_PunishmentContent").GetComponent<Text>();
+        t_temp.text = "";
     }
-    public void ShowContent()
+    public void PressContent_1()
+    {
+        ShowContent(Check.s, 0);
+    }
+    public void PressContent_2()
+    {
+        ShowContent(Check.s, 1);
+    }
+    public void PressContent_3()
+    {
+        ShowContent(Check.s, 2);
+    }
+    public void PressContent_4()
+    {
+        ShowContent(Check.s, 3);
+    }
+    public void PressContent_5()
+    {
+        ShowContent(Check.s, 4);
+    }
+    public void PressContent_6()
+    {
+        ShowContent(Check.s, 5);
+    }
+    public void PressContent_7()
+    {
+        ShowContent(Check.s, 6);
+    }
+
+    public void ShowContent(string s,int n)
     {
         Text t_temp;
+        Task_Class task_temp = new Task_Class();
+        if (s == "learn")
+            task_temp = Task_Data.Learn_Get(n);
+        else if (s == "battle")
+            task_temp = Task_Data.Battle_Get(n);
 
-        if (learn_flag)
-        {
-            t_temp = GameObject.Find("Text_ThresholdContent").GetComponent<Text>();
-            t_temp.text = learn_temp[0].GetThreshold();
-            Debug.Log("ok");
-        }
-        else if (battle_flag)
-        {
-            t_temp = GameObject.Find("Text_ThresholdContent").GetComponent<Text>();
-            t_temp.text = battle_temp[0].GetThreshold();
-        }
-
-
-
+        t_temp = GameObject.Find("Text_ThresholdContent").GetComponent<Text>();
+        t_temp.text = task_temp.GetThreshold();
+        t_temp = GameObject.Find("Text_RequestContent").GetComponent<Text>();
+        t_temp.text = task_temp.GetRequest();
+        t_temp = GameObject.Find("Text_RewardContent").GetComponent<Text>();
+        t_temp.text = task_temp.GetReward();
+        t_temp = GameObject.Find("Text_PunishmentContent").GetComponent<Text>();
+        t_temp.text = task_temp.GetPunishment();
     }
 }
