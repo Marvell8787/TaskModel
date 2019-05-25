@@ -278,6 +278,5 @@ public class Function_Task : MonoBehaviour {
         t_temp.text = task_temp.GetTitle();
         t_temp.color = Color.gray;
         t_temp.fontStyle = FontStyle.Italic;
-        
     }
 }

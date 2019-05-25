@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 static class Task_Data{
-    public static string[] Learn_Title = new string[7] { "Level 1", "Level 2", "Level 3", "Level 4", "Level 5", "Level 6", "Overall" };
-    public static string[] Learn_Threshold = new string[7] { "None", "Level 1's Over", "Level 2's Over", "Level 3's Over", "Level 4's Over", "Level 5's Over", "Level 1~6're Over" };
-    public static string[] Learn_Request = new string[7] { "Complete the Level 1！", "Complete the Level 2！", "Complete the Level 3！", "Complete the Level 4！", "Complete the Level 5！", "Complete the Level 6！", "Complete the Overall！" };
+    public static string[] Learn_Title = new string[7] { "Level-1", "Level-2", "Level-3", "Level-4", "Level-5", "Level-6", "Overall" };
+    public static string[] Learn_Threshold = new string[7] { "None", "Level-1's Over", "Level-2's Over", "Level-3's Over", "Level-4's Over", "Level-5's Over", "Level-1~6're Over" };
+    public static string[] Learn_Request = new string[7] { "Complete the Level-1！", "Complete the Level-2！", "Complete the Level-3！", "Complete the Level-4！", "Complete the Level-5！", "Complete the Level-6！", "Complete the Overall！" };
     public static string[] Learn_Reward = new string[7] { "Crystal", "Crystal", "Crystal", "Crystal", "Crystal", "Crystal", "Crystal" };
     public static string[] Learn_Punishment = new string[7] { "Crystal", "Crystal", "Crystal", "Crystal", "Crystal", "Crystal", "Crystal" };
 
-    public static string[] Battle_Title = new string[3] { "Battle 1", "Battle 2", "Battle 3" };
-    public static string[] Battle_Threshold = new string[3] { "None", "Battle 1's Over", "Battle 2's Over"};
+    public static string[] Battle_Title = new string[3] { "Battle-1", "Battle-2", "Battle-3" };
+    public static string[] Battle_Threshold = new string[3] { "None", "Battle-1's Over", "Battle-2's Over"};
     public static string[] Battle_Request = new string[3] { "Get 1 win in Battle", "Get 3 win in Battle", "Get 5 win in Battle" };
     public static string[] Battle_Reward = new string[3] { "Crystal", "Crystal", "Crystal"};
     public static string[] Battle_Punishment = new string[3] { "Crystal", "Crystal", "Crystal"};
